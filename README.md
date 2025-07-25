@@ -3,7 +3,7 @@
 
 A beautiful, interactive Valentine's Day proposal website with romantic animations and effects.
 
-![Proposal Screenshot](https://i.imgur.com/JqkX3Wl.png)
+![Proposal Screenshot](preview.png)
 
 ## Features ✨
 - Romantic animated background
