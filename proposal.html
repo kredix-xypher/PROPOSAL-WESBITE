@@ -332,8 +332,6 @@
       80% { transform: scale(1.1); }
       100% { transform: scale(1); opacity: 1; }
     }
-
-
     .confetti {
       position: fixed;
       width: 15px;
@@ -344,14 +342,12 @@
       animation: confettiFall 5s linear forwards;
       border-radius: 50%;
     }
-
     @keyframes confettiFall {
       0% { transform: translateY(-100px) rotate(0deg) scale(0.5); opacity: 0; }
       10% { opacity: 1; transform: scale(1); }
       100% { transform: translateY(100vh) rotate(720deg) scale(1); opacity: 0; }
     }
 
-    
     .music-control {
       position: fixed;
       bottom: 30px;
@@ -678,16 +674,12 @@
         heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
         heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
         container.appendChild(heart);
-        
-       
         setTimeout(() => {
           heart.remove();
         }, 8000);
       }, i * 100);
     }
   }
-
-
   createCharacters();
   createFloatingElements();
   createRosePetals(15);
@@ -784,7 +776,6 @@
       ctx.globalAlpha = 1;
     };
   }
-
   function animateFireworks() {
     requestAnimationFrame(animateFireworks);
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
@@ -794,21 +785,16 @@
     fireworks.forEach(f => f.draw());
     fireworks = fireworks.filter(f => !f.exploded || f.particles.length > 0);
   }
-
   function launchFireworks() {
     for (let i = 0; i < 15; i++) {
       setTimeout(() => {
         fireworks.push(new Firework());
       }, i * 200);
     }
-   
     setTimeout(launchFireworks, 2500);
   }
-
- 
   function createConfetti() {
     const colors = ['#ff2e63', '#ff6b8b', '#ff8e9e', '#ffb3c1', '#ffd6e0', '#ffd700', '#ffffff'];
-    
     for (let i = 0; i < 200; i++) {
       setTimeout(() => {
         const confetti = document.createElement('div');
@@ -820,16 +806,12 @@
         confetti.style.animationDuration = Math.random() * 4 + 3 + 's';
         confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
         document.body.appendChild(confetti);
-        
-        
         setTimeout(() => {
           confetti.remove();
         }, 7000);
       }, i * 15);
     }
   }
-
-
   const musicControl = document.getElementById('musicControl');
   const bgMusic = document.getElementById('bgMusic');
   let musicPlaying = false;
@@ -846,20 +828,14 @@
     }
     musicPlaying = !musicPlaying;
   });
-
-  
   function playCelebrationSound() {
     const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
     audio.play();
-    
-  
     setTimeout(() => {
       const romanticAudio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-happy-bells-notification-937.mp3');
       romanticAudio.play();
     }, 1000);
   }
-
-  
   animateFireworks();
 </script>
 
